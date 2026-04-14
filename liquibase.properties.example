@@ -1,0 +1,21 @@
+# Requires a local Liquibase installation with the PostgreSQL JDBC driver available.
+changeLogFile=changelog-master.yaml
+url=jdbc:postgresql://localhost:5436/airline_ops
+username=geography_user
+password=geography_password
+driver=org.postgresql.Driver
+
+### docker exec -it geography-postgres psql -U geography_user -d airline_ops
+###  Ver todas las bases de datos   (\l)
+### Ver todas las tablas (\dt)
+### ver los shema (\dn)
+###  Salir (\q)
+
+
+### ejecutar docker (volver a levantar docker) = docker compose up -d
+### (Volver a levantar el docker)  = docker compose up -d
+
+### Para ejecutar Liquibase y aplicar todos los cambios: docker compose --profile tooling run --rm liquibase update
+### Si quieres ver primero qué va a ejecutar sin aplicarlo: docker compose --profile tooling run --rm liquibase update
+
+### Y si quieres verificar qué changesets están pendientes: docker compose --profile tooling run --rm liquibase status
