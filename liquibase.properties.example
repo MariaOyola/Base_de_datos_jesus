@@ -12,10 +12,14 @@ driver=org.postgresql.Driver
 ###  Salir (\q)
 
 
-### ejecutar docker (volver a levantar docker) = docker compose up -d
+### ejecutar docker (volver a levantar docker) = docker compose down
 ### (Volver a levantar el docker)  = docker compose up -d
 
-### Para ejecutar Liquibase y aplicar todos los cambios: docker compose --profile tooling run --rm liquibase update
-### Si quieres ver primero qué va a ejecutar sin aplicarlo: docker compose --profile tooling run --rm liquibase update
+### 1. Ejecutar cambios (aplica TODO) :  docker compose --profile tooling run --rm liquibase update
+### 2. Ver qué va a ejecutar (SIN aplicar) : docker compose --profile tooling run --rm liquibase updateSQL
 
-### Y si quieres verificar qué changesets están pendientes: docker compose --profile tooling run --rm liquibase status
+### 3.Ver estado (qué falta por ejecutar) : docker compose --profile tooling run --rm liquibase status
+
+## docker compose down -v
+## docker compose up -d
+## docker compose --profile tooling run --rm liquibase update

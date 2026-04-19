@@ -1,16 +1,56 @@
 databaseChangeLog:
-  - changeSet:
-      id: a1f9c3d2-7b41-4e8a-9c12-schemas48291
-      author: mariaj_rodriguez32@soy.sena.edu.co
-      labels: "BD-01-dev,ddl,base,geography"
-      comment: Creates the baseline tables for the geography schema.
-      changes:
-        - sqlFile:
-            path: 001_create_geography_tables.sql
-            relativeToChangelogFile: true
-            stripComments: false
-      rollback:
-        - sqlFile:
-            path: ../../../05_rollbacks/01_ddl/03_tables/001_create_geography_tables.rollback.sql
-            relativeToChangelogFile: true
-            stripComments: false
+  - include:
+      file: geography/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: geography
+
+  - include:
+      file: airline/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: airline
+
+  - include:
+      file: identity/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: identity
+
+  - include:
+      file: security/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: security
+
+  - include:
+      file: loyalty/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: loyalty
+  
+  
+  - include:
+      file: airport/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: airport
+
+  - include:
+      file: flight_operations/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: flight_operations
+
+  - include:
+      file: sales_reservation/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: sales_reservation
+
+  - include:
+      file: boarding/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: boarding
+
+  - include:
+      file: payment/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: payment
+
+  - include:
+      file: billing/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: billing

@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 3f6a9c21-8d4e-4c2b-b7a3-91e5f2d7c8a1
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "ddl,payment"
+      comment: Creates the baseline tables for the payment schema.
+      changes:
+        - sqlFile:
+            path: 001_create_payment_tables.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/payment/001_create_payment_tables.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false

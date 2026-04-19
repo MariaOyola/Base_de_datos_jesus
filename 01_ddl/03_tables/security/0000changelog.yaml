@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: d91f3a7c-5b22-4e88-9a11-7c3d8f2a6b90
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "ddl,security"
+      comment: Creates the baseline tables for the security schema.
+      changes:
+        - sqlFile:
+            path: 001_create_security_tables.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/security/001_create_security_tables.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false

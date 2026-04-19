@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: f3c8a9d1-6e42-4b77-9a15-2d8c5f91e3b6
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "ddl,identity"
+      comment: Creates the baseline tables for the identity schema.
+      changes:
+        - sqlFile:
+            path: 001_create_identity_tables.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/identity/001_create_identity_tables.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false

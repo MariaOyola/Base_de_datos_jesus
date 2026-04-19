@@ -7,7 +7,7 @@ services:
     environment:
       POSTGRES_DB: ${POSTGRES_DB:-airline_ops}
       POSTGRES_USER: ${POSTGRES_USER:-geography_user}
-      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-geography_password} 
+      POSTGRES_PASSWORD: geography_password
     ports:
       - "${POSTGRES_PORT:-5436}:5432"
     volumes:

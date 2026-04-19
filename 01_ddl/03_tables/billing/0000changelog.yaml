@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: b12e7f9a-3c44-4d6a-9a2f-6c1b8e5d7f90
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "ddl,billing"
+      comment: Creates the baseline tables for the billing schema.
+      changes:
+        - sqlFile:
+            path: 001_create_billing_tables.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/billing/001_create_billing_tables.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false
