@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 1c9f3a2d-8b77-4e11-9a55-2d8c7f1b3a90
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "ddl,airport"
+      comment: Creates the baseline tables for the airport schema.
+      changes:
+        - sqlFile:
+            path: 001_create_airport_tables.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/airport/001_create_airport_tables.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false

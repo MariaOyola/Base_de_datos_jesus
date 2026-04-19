@@ -1,0 +1,17 @@
+databaseChangeLog:
+  - changeSet:
+      id: b2c3d4e5-0002-4f6a-b789-schemas00001
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "BD-01-dev,ddl,base,schema"
+      comment: 'Creates the baseline schemas for the airline_ops database: geography, identity, security, airline, loyalty, commercial, boarding, airport, aircraft, flight_operations, sales_reservation, payment, billing.'
+      changes:
+        - sqlFile:
+            path: 001_create_schemas.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/01_schemas/001_create_schemas.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false
+            

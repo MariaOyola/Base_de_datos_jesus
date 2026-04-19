@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: c7b2a891-3d55-4f6b-a901-schemas73920
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "insert data,dml,geography"
+      comment: Inserts the baseline data for the geography schema.
+      changes:
+        - sqlFile:
+            path: 001_insert_geography.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/02_dml/00_inserts/geography/001_insert_geography.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false
+
+
+
+

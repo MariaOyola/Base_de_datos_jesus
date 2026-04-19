@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 8d2a1f77-3c44-4b99-8e22-1f6a9c3d7b55
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "ddl,boarding"
+      comment: Creates the baseline tables for the boarding schema.
+      changes:
+        - sqlFile:
+            path: 001_create_boarding_tables.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/boarding/001_create_boarding_tables.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false

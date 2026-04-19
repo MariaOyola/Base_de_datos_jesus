@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5c8a1f33-9b77-4e22-8d11-3f7a9c2b6e55
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "ddl,flight_operations"
+      comment: Creates the baseline tables for the flight_operations schema.
+      changes:
+        - sqlFile:
+            path: 001_create_flight_operations_tables.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/flight_operations/001_create_flight_operations_tables.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false
