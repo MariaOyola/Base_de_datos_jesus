@@ -2,16 +2,16 @@ databaseChangeLog:
   - changeSet:
       id: 4e9a1b7c-8d44-4f2a-b3e1-6c7d5a9f2b11
       author: mariaj_rodriguez32@soy.sena.edu.co
-      labels: "insert data,dml,airline"
-      comment: Inserts the baseline data for the airline schema.
+      labels: "insert data,dml,payment"
+      comment: Inserts the baseline data for the payment schema.
       changes:
         - sqlFile:
-            path: 001_insert_airline.sql
+            path: 001_insert_payment.sql
             relativeToChangelogFile: true
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../../05_rollbacks/02_dml/00_inserts/airline/001_insert_airline.rollback.sql
+            path: ../../../05_rollbacks/02_dml/00_inserts/payment/001_insert_payment.rollback.sql
             relativeToChangelogFile: true
             stripComments: false
 
