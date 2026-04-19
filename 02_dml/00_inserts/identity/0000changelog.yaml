@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: f3c1e9a7-2b44-4d8a-9f3c-5a1e7d2b6c99
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "insert data,dml,identity"
+      comment: Inserts the baseline data for the identity schema.
+      changes:
+        - sqlFile:
+            path: 001_insert_identity.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/02_dml/00_inserts/identity/001_insert_identity.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false
+
+
+
+

@@ -3,6 +3,34 @@ databaseChangeLog:
       file: geography/0000changelog.yaml
       relativeToChangelogFile: true
       labels: geography
+  
+  - include:
+      file: airline/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: airline 
 
+  - include:
+      file: identity/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: identity
 
+  - include:
+      file: security/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: security
+  
+  - include:
+      file: loyalty/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: loyalty
 
+  - include:
+      file: airport/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: airport
+
+  - include:
+      file: aircraft/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: aircraft
+    

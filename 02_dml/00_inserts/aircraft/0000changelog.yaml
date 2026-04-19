@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 5e2c1d9a-7b44-4a8f-9c2d-1f6e3b7a8c55
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "insert data,dml,aircraft"
+      comment: Inserts the baseline data for the aircraft schema.
+      changes:
+        - sqlFile:
+            path: 001_insert_aircraft.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/02_dml/00_inserts/aircraft/001_insert_aircraft.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false
+
+
+
+

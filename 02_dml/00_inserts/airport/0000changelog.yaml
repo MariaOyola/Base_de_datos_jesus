@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: a7f1c2e3-9d88-4b6a-8f3e-2c5d7a1b4e66
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "insert data,dml,airport"
+      comment: Inserts the baseline data for the airport schema.
+      changes:
+        - sqlFile:
+            path: 001_insert_airport.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/02_dml/00_inserts/airport/001_insert_airport.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false
+
+
+
+
