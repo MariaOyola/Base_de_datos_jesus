@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6a1f9c33-8b22-4e77-9d11-2c7f5a8b3e90
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "ddl,sales_reservation"
+      comment: Creates the baseline tables for the sales_reservation schema.
+      changes:
+        - sqlFile:
+            path: 001_create_sales_reservation_tables.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/sales_reservation/001_create_sales_reservation_tables.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false

@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: a1b2c3d4-0001-4e5f-a678-extensions0001
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "BD-01-dev,ddl,base,extensions"
+      comment: Enables uuid-ossp and pgcrypto extensions for the airline_ops baseline.
+      changes:
+        - sqlFile:
+            path: 001_enable_extensions.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/00_extensions/001_enable_extensions.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false

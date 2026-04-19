@@ -1,0 +1,16 @@
+databaseChangeLog:
+  - changeSet:
+      id: a1f9c3d2-7b41-4e8a-9c12-4f2d8b3a91c7
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "ddl,airline"
+      comment: Creates the baseline tables for the airline schema.
+      changes:
+        - sqlFile:
+            path: 001_create_airline_tables.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/airline/001_create_airline_tables.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false

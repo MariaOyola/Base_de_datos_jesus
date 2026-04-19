@@ -1,0 +1,8 @@
+databaseChangeLog:
+  - include:
+      file: geography/0000changelog.yaml
+      relativeToChangelogFile: true
+      labels: geography
+
+
+
