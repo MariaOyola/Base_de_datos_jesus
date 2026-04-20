@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 91d7a3c2-4e88-4b6f-b2a1-6e9c3d7f5a88
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "insert data,dml,flight_operations"
+      comment: Inserts the baseline data for the flight_operations schema.
+      changes:
+        - sqlFile:
+            path: 001_insert_flight_operations.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/02_dml/00_inserts/flight_operations/001_insert_flight_operations.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false
+
+
+
+

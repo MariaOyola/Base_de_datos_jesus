@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 6b2d9e1a-3c88-4a7f-8d2c-1e5b9a7c3f22
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "insert data,dml,sales_reservation"
+      comment: Inserts the baseline data for the sales_reservation schema.
+      changes:
+        - sqlFile:
+            path: 001_insert_sales_reservation.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/02_dml/00_inserts/sales_reservation/001_insert_sales_reservation.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false
+
+
+
+

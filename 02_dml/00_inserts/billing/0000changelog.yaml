@@ -1,0 +1,20 @@
+databaseChangeLog:
+  - changeSet:
+      id: 2b8c7a1d-5e44-4f9a-a1d3-7c2e6b8f9d10
+      author: mariaj_rodriguez32@soy.sena.edu.co
+      labels: "insert data,dml,billing"
+      comment: Inserts the baseline data for the billing schema.
+      changes:
+        - sqlFile:
+            path: 001_insert_billing.sql
+            relativeToChangelogFile: true
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/02_dml/00_inserts/billing/001_insert_billing.rollback.sql
+            relativeToChangelogFile: true
+            stripComments: false
+
+
+
+

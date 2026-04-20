@@ -24,7 +24,6 @@ databaseChangeLog:
       relativeToChangelogFile: true
       labels: loyalty
   
-  
   - include:
       file: airport/0000changelog.yaml
       relativeToChangelogFile: true
