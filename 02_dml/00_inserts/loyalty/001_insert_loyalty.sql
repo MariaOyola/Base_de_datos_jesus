@@ -1,5 +1,7 @@
 -- ============================================
--- CUSTOMER CATEGORY
+-- 1. CUSTOMER CATEGORY
+-- Tabla base SIN dependencias
+-- Tipos de clientes
 -- ============================================
 
 INSERT INTO loyalty.customer_category (category_code, category_name) VALUES
@@ -8,7 +10,9 @@ INSERT INTO loyalty.customer_category (category_code, category_name) VALUES
 ('CORP', 'Corporate Customer');
 
 -- ============================================
--- BENEFIT TYPE
+-- 2. BENEFIT TYPE
+-- Tabla base SIN dependencias
+-- Beneficios posibles
 -- ============================================
 
 INSERT INTO loyalty.benefit_type (benefit_code, benefit_name, benefit_description) VALUES
@@ -17,7 +21,9 @@ INSERT INTO loyalty.benefit_type (benefit_code, benefit_name, benefit_descriptio
 ('LOUNGE_ACCESS', 'Lounge Access', 'Access to VIP lounges');
 
 -- ============================================
--- LOYALTY PROGRAM
+-- 3. LOYALTY PROGRAM
+-- Depende de: airline + currency
+-- Programa de millas por aerolínea
 -- ============================================
 
 INSERT INTO loyalty.loyalty_program (
@@ -39,7 +45,9 @@ WHERE a.airline_code = 'AV'
 
 
 -- ============================================
--- LOYALTY TIER
+-- 4. LOYALTY TIER
+-- Depende de: loyalty_program
+-- Niveles del programa
 -- ============================================
 
 INSERT INTO loyalty.loyalty_tier (
@@ -76,7 +84,9 @@ FROM loyalty.loyalty_program lp
 WHERE lp.program_code = 'AV_MILES';
 
 -- ============================================
--- CUSTOMER
+-- 5. CUSTOMER
+-- Depende de: airline + person + customer_category
+-- Convierte personas en clientes de la aerolínea
 -- ============================================
 
 INSERT INTO loyalty.customer (
@@ -109,7 +119,9 @@ JOIN loyalty.customer_category cc ON cc.category_code = 'REGULAR'
 WHERE a.airline_code = 'AV';
 
 -- ============================================
--- LOYALTY ACCOUNT
+-- 6. LOYALTY ACCOUNT
+-- Depende de: customer + loyalty_program
+-- Cuenta de millas del cliente
 -- ============================================
 
 INSERT INTO loyalty.loyalty_account (
@@ -142,7 +154,9 @@ JOIN identity.person p ON p.person_id = c.person_id
 WHERE p.first_name = 'Carlos';
 
 -- ============================================
--- LOYALTY ACCOUNT TIER
+-- 7. LOYALTY ACCOUNT TIER
+-- Depende de: loyalty_account + loyalty_tier
+-- Nivel actual del cliente
 -- ============================================
 
 INSERT INTO loyalty.loyalty_account_tier (
@@ -177,7 +191,9 @@ JOIN identity.person p ON p.person_id = c.person_id
 WHERE p.first_name = 'Carlos';
 
 -- ============================================
--- MILES TRANSACTION
+-- 8. MILES TRANSACTION
+-- Depende de: loyalty_account
+-- Movimiento de millas
 -- ============================================
 
 INSERT INTO loyalty.miles_transaction (
@@ -199,7 +215,9 @@ JOIN identity.person p ON p.person_id = c.person_id
 WHERE p.first_name = 'Maria';
 
 -- ============================================
--- CUSTOMER BENEFIT
+-- 9. CUSTOMER BENEFIT
+-- Depende de: customer + benefit_type
+-- Beneficios asignados al cliente
 -- ============================================
 
 INSERT INTO loyalty.customer_benefit (

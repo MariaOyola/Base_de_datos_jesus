@@ -1,5 +1,12 @@
 -- ============================================
--- PERSON TYPE
+-- IDENTITY SEED DATA
+-- ORDEN: catálogos → personas → documentos → contactos
+-- ============================================
+
+-- ============================================
+-- 1. PERSON TYPE
+-- Tabla base SIN dependencias
+-- Define tipo de persona
 -- ============================================
 
 INSERT INTO identity.person_type (type_code, type_name) VALUES
@@ -7,7 +14,9 @@ INSERT INTO identity.person_type (type_code, type_name) VALUES
 ('LEG', 'Legal Entity');
 
 -- ============================================
--- DOCUMENT TYPE
+-- 2. DOCUMENT TYPE
+-- Tabla base SIN dependencias
+-- Tipos de identificación
 -- ============================================
 
 INSERT INTO identity.document_type (type_code, type_name) VALUES
@@ -16,7 +25,9 @@ INSERT INTO identity.document_type (type_code, type_name) VALUES
 ('NIT', 'Tax ID');
 
 -- ============================================
--- CONTACT TYPE
+-- 3. CONTACT TYPE
+-- Tabla base SIN dependencias
+-- Tipos de contacto
 -- ============================================
 
 INSERT INTO identity.contact_type (type_code, type_name) VALUES
@@ -25,7 +36,9 @@ INSERT INTO identity.contact_type (type_code, type_name) VALUES
 ('MOBILE', 'Mobile Phone');
 
 -- ============================================
--- PERSON
+-- 4. PERSON
+-- Depende de: person_type + country
+-- Se usan SELECT para traer IDs automáticamente
 -- ============================================
 
 INSERT INTO identity.person (
@@ -69,7 +82,8 @@ WHERE pt.type_code = 'NAT'
 
 
 -- ============================================
--- PERSON DOCUMENT
+-- 5. PERSON DOCUMENT
+-- Depende de: person + document_type + country
 -- ============================================
 
 INSERT INTO identity.person_document (
@@ -111,7 +125,8 @@ WHERE p.first_name = 'Carlos';
 
 
 -- ============================================
--- PERSON CONTACT
+-- 6. PERSON CONTACT
+-- Depende de: person + contact_type
 -- ============================================
 
 INSERT INTO identity.person_contact (

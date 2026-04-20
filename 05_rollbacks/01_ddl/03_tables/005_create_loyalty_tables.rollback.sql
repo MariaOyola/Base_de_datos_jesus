@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS loyalty.customer_benefit CASCADE;
+DROP TABLE IF EXISTS loyalty.miles_transaction CASCADE;
+DROP TABLE IF EXISTS loyalty.loyalty_account_tier CASCADE;
+DROP TABLE IF EXISTS loyalty.loyalty_account CASCADE;
+DROP TABLE IF EXISTS loyalty.customer CASCADE;
+DROP TABLE IF EXISTS loyalty.loyalty_tier CASCADE;
+DROP TABLE IF EXISTS loyalty.loyalty_program CASCADE;
+DROP TABLE IF EXISTS loyalty.benefit_type CASCADE;
+DROP TABLE IF EXISTS loyalty.customer_category CASCADE;

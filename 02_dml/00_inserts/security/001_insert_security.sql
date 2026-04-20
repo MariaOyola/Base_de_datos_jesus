@@ -1,5 +1,10 @@
 -- ============================================
--- USER STATUS
+-- SECURITY SEED DATA
+-- ORDEN: catálogos → usuarios → roles → permisos
+
+-- 1. USER STATUS
+-- Tabla base SIN dependencias
+-- Estados del usuario
 -- ============================================
 
 INSERT INTO security.user_status (status_code, status_name) VALUES
@@ -9,7 +14,9 @@ INSERT INTO security.user_status (status_code, status_name) VALUES
 
 
 -- ============================================
--- SECURITY ROLE
+-- 2. SECURITY ROLE
+-- Tabla base SIN dependencias
+-- Tipos de roles del sistema
 -- ============================================
 
 INSERT INTO security.security_role (role_code, role_name, role_description) VALUES
@@ -19,7 +26,9 @@ INSERT INTO security.security_role (role_code, role_name, role_description) VALU
 
 
 -- ============================================
--- SECURITY PERMISSION
+-- 3. SECURITY PERMISSION
+-- Tabla base SIN dependencias
+-- Acciones permitidas dentro del sistema
 -- ============================================
 
 INSERT INTO security.security_permission (permission_code, permission_name, permission_description) VALUES
@@ -33,7 +42,9 @@ INSERT INTO security.security_permission (permission_code, permission_name, perm
 
 
 -- ============================================
--- USER ACCOUNT
+-- 4. USER ACCOUNT
+-- Depende de: identity.person + user_status
+-- Se crean usuarios del sistema
 -- ============================================
 
 INSERT INTO security.user_account (
@@ -69,7 +80,9 @@ WHERE p.first_name = 'Carlos';
 
 
 -- ============================================
--- USER ROLE
+-- 5. USER ROLE
+-- Depende de: user_account + security_role
+-- Asigna roles a usuarios
 -- ============================================
 
 -- Maria → ADMIN
@@ -99,7 +112,9 @@ WHERE ua.username = 'carlos.agent';
 
 
 -- ============================================
--- ROLE PERMISSION
+-- 6. ROLE PERMISSION
+-- Depende de: security_role + security_permission
+-- Define qué puede hacer cada rol
 -- ============================================
 
 -- ADMIN → todos los permisos

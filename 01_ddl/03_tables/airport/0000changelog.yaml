@@ -11,6 +11,6 @@ databaseChangeLog:
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../../05_rollbacks/01_ddl/03_tables/airport/001_create_airport_tables.rollback.sql
+            path: ../../../05_rollbacks/01_ddl/03_tables/airport/006_create_airport_tables.rollback.sql
             relativeToChangelogFile: true
             stripComments: false

@@ -11,6 +11,6 @@ databaseChangeLog:
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../../05_rollbacks/01_ddl/03_tables/boarding/001_create_boarding_tables.rollback.sql
+            path: ../../../05_rollbacks/01_ddl/03_tables/boarding/010_create_boarding_tables.rollback.sql
             relativeToChangelogFile: true
             stripComments: false

@@ -1,5 +1,7 @@
 -- ============================================
 -- AIRPORT
+“Busque la dirección que pertenece a la 
+ciudad de Neiva y úsela para crear el aeropuerto”
 -- ============================================
 
 -- Neiva (Benito Salas - NVA)
@@ -39,6 +41,8 @@ WHERE c.city_name = 'Bogota';
 
 -- ============================================
 -- TERMINAL
+Crea puertas de embarque dentro de una terminal.
+-- cuando usa JOIN se asegura Qué terminal pertenece a qué aeropuerto
 -- ============================================
 
 INSERT INTO airport.terminal (

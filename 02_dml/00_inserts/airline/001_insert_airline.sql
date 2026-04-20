@@ -1,3 +1,9 @@
+-- ============================================
+-- AIRLINE SEED DATA
+-- Depende de: geography.country
+-- Objetivo: registrar aerolíneas con su país base
+-- ============================================
+
 INSERT INTO airline.airline (home_country_id, airline_code, airline_name, iata_code, icao_code)
 SELECT country_id, 'AV', 'Avianca', 'AV', 'AVA'
 FROM geography.country WHERE iso_alpha2 = 'CO';

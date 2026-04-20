@@ -11,6 +11,6 @@ databaseChangeLog:
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../../05_rollbacks/01_ddl/03_tables/sales_reservation/001_create_sales_reservation_tables.rollback.sql
+            path: ../../../05_rollbacks/01_ddl/03_tables/sales_reservation/009_create_sales_reservation_tables.rollback.sql
             relativeToChangelogFile: true
             stripComments: false

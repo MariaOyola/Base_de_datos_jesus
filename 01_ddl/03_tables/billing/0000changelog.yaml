@@ -11,6 +11,6 @@ databaseChangeLog:
             stripComments: false
       rollback:
         - sqlFile:
-            path: ../../../05_rollbacks/01_ddl/03_tables/billing/001_create_billing_tables.rollback.sql
+            path: ../../../05_rollbacks/01_ddl/03_tables/billing/012_create_billing_tables.rollback.sql
             relativeToChangelogFile: true
             stripComments: false
